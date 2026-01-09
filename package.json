@@ -1,0 +1,12 @@
+{
+  "name": "algorithm-visualizer",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "concurrently \"npm start --prefix client\" \"npm run dev --prefix server\""
+  }
+}

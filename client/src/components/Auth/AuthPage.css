@@ -1,0 +1,75 @@
+/* AuthPage.css */
+.auth-modal-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.auth-modal {
+  background-color: #1f2937; /* Tailwind gray-900 */
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: #374151; /* gray-800 */
+  color: #fff;
+}
+
+.auth-input::placeholder {
+  color: #9ca3af; /* gray-400 */
+}
+
+.auth-btn-primary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #06b6d4; /* cyan-400 */
+  color: #000;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.auth-btn-primary:hover {
+  background-color: #0e7490; /* cyan-600 */
+}
+
+.auth-btn-google {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.auth-btn-google:hover {
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-toggle {
+  color: #06b6d4; /* cyan-400 */
+  font-weight: bold;
+  cursor: pointer;
+}

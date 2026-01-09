@@ -1,0 +1,10 @@
+.App {
+  min-height: 100vh;
+  background-color: #111827;
+}
+/* HomePage and AboutSection should take full viewport height */
+.home-page, .about-section {
+  width: 100%;
+  height: 100vh; /* full screen height */
+  overflow: hidden; /* remove scroll */
+}
