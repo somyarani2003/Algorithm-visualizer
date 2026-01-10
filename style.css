@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --black: #000;
+    --white: #fff;
+}
+
+.dark {
+    --black: #fff;
+    --white: #000;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+}
+
+header .logo {
+    position: relative;
+    display: inline-flex;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+}
+
+.btns {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btns ion-icon {
+    font-size: 1.5em;
+    color: var(--black);
+}
+
+.btns.menuToggle ion-icon {
+    font-size: 2em;
+}
+
+.btns ion-icon:nth-child(2) {
+    display: none;
+}
+
+.btns.active ion-icon:nth-child(2) {
+    display: block;
+}
+
+.btns.active ion-icon:nth-child(1) {
+    display: none;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    user-select: none;
+    mix-blend-mode: screen;
+}
+
+.dark .mask {
+    filter: invert(1);
+    mix-blend-mode: multiply;
+}
+
+.heading {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.main .heading h4 {
+    font-size: 4rem;
+    color: cyan;
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.main .heading h3 {
+    font-size: 5rem;
+    color: cyan;
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    animation: float 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white);
+    z-index: 9999;
+    transition: left 0.5s ease;
+}
+
+.navigation.active {
+    left: 0;
+}
+
+.navigation li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.navigation li a {
+    display: inline-flex;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: var(--black);
+    padding: 10px 30px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+.navigation li a:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.copyrightText {
+    position: absolute;
+    left: 100px;
+    bottom: 40px;
+    z-index: 4;
+    font-weight: 500;
+    font-size: 1em;
+    color: var(--black);
+}
+
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 10px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    position: relative;
+    top: 0;
+    animation: slide 10s steps(1) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -25px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    white-space: nowrap;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--black);
+    background: var(--white);
+    animation: typing 2s steps(15) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 30px 50px;
+    }
+    
+    header .logo {
+        font-size: 1.2em;
+    }
+    
+    .main .heading h4 {
+        font-size: 3rem;
+    }
+    
+    .main .heading h3 {
+        font-size: 3.5rem;
+    }
+    
+    .copyrightText {
+        left: 50px;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px 20px;
+    }
+    
+    header .logo {
+        font-size: 1em;
+        letter-spacing: 0;
+    }
+    
+    .btns {
+        width: 35px;
+        height: 35px;
+        margin-left: 5px;
+    }
+    
+    .btns ion-icon {
+        font-size: 1.3em;
+    }
+    
+    .btns.menuToggle ion-icon {
+        font-size: 1.8em;
+    }
+    
+    .main .heading h4 {
+        font-size: 2.5rem;
+    }
+    
+    .main .heading h3 {
+        font-size: 3rem;
+    }
+    
+    .navigation li a {
+        font-size: 1.2em;
+        padding: 8px 25px;
+    }
+    
+    .copyrightText {
+        left: 20px;
+        bottom: 20px;
+        font-size: 0.9em;
+    }
+    
+    .wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .wrapper .dynamic-txts {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px 15px;
+    }
+    
+    header .logo {
+        font-size: 12px;
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .main .heading h4 {
+        font-size: 2rem;
+    }
+    
+    .main .heading h3 {
+        font-size: 2.5rem;
+    }
+    
+    .navigation li {
+        margin: 5px 0;
+    }
+    
+    .navigation li a {
+        font-size: 1em;
+        padding: 8px 20px;
+    }
+    
+    .copyrightText {
+        font-size: 0.8em;
+        max-width: 90%;
+    }
+    
+    .static-txt {
+        font-size: 0.9em;
+    }
+    
+    .dynamic-txts li span {
+        font-size: 0.9em;
+    }
+}
+
+/* Very Small Mobile Styles */
+@media screen and (max-width: 360px) {
+    header .logo {
+        display: none;
+    }
+    
+    .rightSide {
+        margin-left: auto;
+    }
+    
+    .main .heading h4 {
+        font-size: 1.5rem;
+    }
+    
+    .main .heading h3 {
+        font-size: 2rem;
+    }
+    
+    .copyrightText {
+        font-size: 0.7em;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .main {
+        min-height: 100vh;
+    }
+    
+    .main .heading h4 {
+        font-size: 2rem;
+    }
+    
+    .main .heading h3 {
+        font-size: 2.5rem;
+    }
+    
+    .copyrightText {
+        bottom: 10px;
+    }
+}
