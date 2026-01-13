@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Algorithm-Visualizer-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Algorithm Visualizer">
+  <img src="https://img.shields.io/badge/Algorithm-Visualizer-00D9FF?style=for-the-badge&logo=react&logoColor=white" alt="Algorithm Visualizer">
   
   # 🎯 Algorithm Visualizer
   
   <p align="center">
-    <strong>An interactive web-based platform for visualizing sorting and searching algorithms</strong>
+    <strong>An interactive full-stack web application for visualizing sorting and searching algorithms with stunning 3D animations</strong>
   </p>
   
   <p align="center">
@@ -18,7 +18,7 @@
       <img src="https://img.shields.io/github/issues/Rajibul-Molla/algorithm-visualizer?style=flat-square" alt="GitHub issues">
     </a>
     <a href="https://github.com/Rajibul-Molla/algorithm-visualizer/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/Rajibul-Molla/algorithm-visualizer?style=flat-square" alt="GitHub license">
+      <img src="https://img.shields.io/github/license/Rajibul-Molla/algorithm-visualizer?style=flat-square" alt="MIT License">
     </a>
   </p>
 
@@ -28,6 +28,8 @@
     <a href="#features">Features</a>
     •
     <a href="#installation">Installation</a>
+    •
+    <a href="#api-documentation">API Docs</a>
     •
     <a href="#contributing">Contributing</a>
   </p>
@@ -44,21 +46,27 @@
 - [About](#about)
 - [Demo](#demo)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [Algorithms Implemented](#algorithms-implemented)
-- [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Screenshots](#screenshots)
+- [API Documentation](#api-documentation)
+- [Project Structure](#project-structure)
 - [Team](#team)
-- [Acknowledgments](#acknowledgments)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## 🎨 About
 
 <table>
   <tr>
     <td>
-      <b>Algorithm Visualizer</b> is an interactive educational web application designed to help students, developers, and coding enthusiasts understand fundamental computer science algorithms through dynamic visual representations. The platform transforms abstract algorithmic concepts into engaging, animated visualizations that make learning intuitive and enjoyable.
+      <b>Algorithm Visualizer</b> is a modern, full-stack educational web application built with React.js, Node.js, and MongoDB. It helps students, developers, and coding enthusiasts understand fundamental computer science algorithms through dynamic 3D visualizations and interactive animations.
       <br><br>
-      Whether you're preparing for technical interviews, studying data structures and algorithms, or simply curious about how different sorting and searching algorithms work, this tool provides an immersive learning experience.
+      The platform features a stunning 3D animated homepage with particle effects and floating cubes, color-coded sorting visualizations, step-by-step searching animations.
+      <br><br>
+      Whether you're preparing for technical interviews, studying data structures and algorithms, or simply curious about how different algorithms work, this tool provides an immersive, production-ready learning experience.
     </td>
   </tr>
 </table>
@@ -66,8 +74,12 @@
 ## 🚀 Demo
 
 <div align="center">
-  <a href="https://algorithm-visualizer-sooty.vercel.app/">
+  <a href="algorithm-visualizer-puce-seven.vercel.app/">
     <img src="https://img.shields.io/badge/LIVE%20DEMO-Click%20Here-success?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  </a>
+  <br><br>
+  <a href="https://algorithm-visualizer-api.onrender.com">
+    <img src="https://img.shields.io/badge/API-Backend%20Server-blue?style=for-the-badge&logo=node.js&logoColor=white" alt="Backend API">
   </a>
 </div>
 
@@ -76,45 +88,59 @@
 <table>
   <tr>
     <td width="50%">
-      <h3>🔄 Sorting Visualizer</h3>
+      <h3>🎨 3D Animated Homepage</h3>
       <ul>
-        <li>Bubble Sort</li>
-        <li>Selection Sort</li>
-        <li>Insertion Sort</li>
-        <li>Merge Sort</li>
-        <li>Quick Sort</li>
+        <li>Particle starfield effect (150 particles)</li>
+        <li>8 rotating wireframe cubes</li>
+        <li>Smooth floating animations</li>
+        <li>Gradient text effects</li>
+        <li>Canvas-based high-performance rendering</li>
       </ul>
     </td>
     <td width="50%">
-      <h3>🔍 Searching Visualizer</h3>
+      <h3>🔄 Advanced Sorting Visualizer</h3>
       <ul>
-        <li>Linear Search</li>
-        <li>Binary Search</li>
-        <li>Step-by-step execution</li>
-        <li>Element found indicator</li>
-        <li>Step counter</li>
+        <li>5 algorithms with color-coded states</li>
+        <li>Bubble Sort (O(n²))</li>
+        <li>Selection Sort (O(n²))</li>
+        <li>Insertion Sort (O(n²))</li>
+        <li>Merge Sort (O(n log n))</li>
+        <li>Quick Sort (O(n log n))</li>
       </ul>
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <h3>🎮 Interactive Controls</h3>
+      <h3>🔍 Interactive Searching Visualizer</h3>
       <ul>
-        <li>Adjustable array size (4-100 elements)</li>
-        <li>Variable animation speed</li>
-        <li>Generate random arrays</li>
-        <li>Pause/Resume functionality</li>
-        <li>Real-time visualization</li>
+        <li>Linear Search with step tracking</li>
+        <li>Binary Search with visual indicators</li>
+        <li>Real-time step counter</li>
+        <li>Color-coded element states</li>
+        <li>Found/Not Found visual feedback</li>
       </ul>
     </td>
-    <td width="50%">
+     <td width="50%">
+      <h3>🎮 Interactive Controls</h3>
+      <ul>
+        <li>Array size: 10-100 elements</li>
+        <li>Speed control: 1-100 levels</li>
+        <li>Generate random arrays</li>
+        <li>Real-time visualization updates</li>
+        <li>Responsive slider controls</li>
+      </ul>
+    </td>
+  </tr>
+ 
+  <tr>
+      <td width="50%">
       <h3>📚 Educational Content</h3>
       <ul>
-        <li>Algorithm implementation in C++</li>
-        <li>Time complexity analysis</li>
-        <li>Space complexity analysis</li>
-        <li>Syntax highlighted code</li>
-        <li>Detailed explanations</li>
+        <li>C++ code implementation display</li>
+        <li>Time complexity analysis (Big O)</li>
+        <li>Space complexity breakdown</li>
+        <li>Syntax highlighting (Prism.js)</li>
+        <li>Algorithm explanations</li>
       </ul>
     </td>
   </tr>
@@ -125,284 +151,451 @@
 <details>
 <summary><b>Click to expand</b></summary>
 
-- **📱 Fully Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **🌙 Dark/Light Mode**: Toggle between dark and light themes
-- **⚡ Performance Optimized**: Smooth animations even with large datasets
-- **♿ Accessibility**: Keyboard navigation and screen reader support
-- **🎨 Modern UI/UX**: Clean, intuitive interface with smooth transitions
-- **📊 Visual Feedback**: Color-coded elements for better understanding
-- **🔧 Customizable**: Easy to extend with new algorithms
+- **📱 Fully Responsive Design**: Optimized for mobile, tablet, and desktop with CSS media queries
+- **⚡ High Performance**: Smooth 60fps animations even with 100 elements
+- **🎯 Color-Coded Visualization**:
+  - 🔵 Cyan: Unsorted elements
+  - 🟡 Yellow: Currently comparing
+  - 🔴 Red: Swapping/Moving
+  - 🟣 Purple: Pivot/Selected element
+  - 🟢 Green: Sorted/Found element
+- **💾 MongoDB Integration**: User data persistence
+- **📊 RESTful API**: Complete backend API with validation
+- **🚀 Production Ready**: Deployed on Vercel & Render
+- **♿ Accessibility**: ARIA labels and keyboard navigation
+- **🎨 Modern UI/UX**: Tailwind CSS with custom animations
 
 </details>
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+### Frontend
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) | UI Framework | 18.2.0 |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Styling | 3.3.5 |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | Programming | ES6+ |
+| ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) | HTTP Client | 1.6.2 |
+| ![Lucide React](https://img.shields.io/badge/Lucide-F56565?style=for-the-badge&logo=lucide&logoColor=white) | Icons | 0.263.1 |
+| ![Canvas API](https://img.shields.io/badge/Canvas-E34F26?style=for-the-badge&logo=html5&logoColor=white) | 3D Animations | Native |
+
+### Backend
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) | Runtime | 16+ |
+| ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) | Web Framework | 4.18.2 |
+| ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) | Database | 6.0+ |
+| ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white) | ODM | 8.0.3 |
+
+
+### Deployment
+| Platform | Purpose |
+|----------|---------|
+| ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) | Frontend Hosting |
+| ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white) | Backend Hosting |
+| ![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white) | Database Hosting |
+
+</div>
 
 ## 🧮 Algorithms Implemented
 
 ### Sorting Algorithms
 
-| Algorithm | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
-|-----------|----------------------|-------------------------|------------------------|------------------|
-| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) |
-| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) |
-| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) |
-| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
-| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) |
+| Algorithm | Best Case | Average Case | Worst Case | Space Complexity | Color States |
+|-----------|-----------|--------------|------------|------------------|--------------|
+| **Bubble Sort** | O(n) | O(n²) | O(n²) | O(1) | 🟡🔴🟢 |
+| **Selection Sort** | O(n²) | O(n²) | O(n²) | O(1) | 🟡🔴🟣🟢 |
+| **Insertion Sort** | O(n) | O(n²) | O(n²) | O(1) | 🟡🔴🟢 |
+| **Merge Sort** | O(n log n) | O(n log n) | O(n log n) | O(n) | 🟡🔴🟣🟢 |
+| **Quick Sort** | O(n log n) | O(n log n) | O(n²) | O(log n) | 🟡🔴🟣🟢 |
 
 ### Searching Algorithms
 
-| Algorithm | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
-|-----------|----------------------|-------------------------|------------------------|------------------|
-| Linear Search | O(1) | O(n) | O(n) | O(1) |
-| Binary Search | O(1) | O(log n) | O(log n) | O(1) |
+| Algorithm | Best Case | Average Case | Worst Case | Space Complexity | Visual States |
+|-----------|-----------|--------------|------------|------------------|---------------|
+| **Linear Search** | O(1) | O(n) | O(n) | O(1) | 🟡🔴🟢 |
+| **Binary Search** | O(1) | O(log n) | O(log n) | O(1) | 🟡🔴🟢 |
 
-## 🛠️ Technologies Used
+### Color Legend
 
-<div align="center">
-  
-| Technology | Description | Version |
-|------------|-------------|---------|
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | Markup Language | 5 |
-| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | Styling | 3 |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | Programming Language | ES6+ |
-| ![Prism.js](https://img.shields.io/badge/Prism.js-000000?style=for-the-badge&logo=javascript&logoColor=white) | Syntax Highlighting | Latest |
-| ![Ionicons](https://img.shields.io/badge/Ionicons-3880FF?style=for-the-badge&logo=ionic&logoColor=white) | Icon Library | 4.5.10 |
+#### Sorting
+- 🔵 **Cyan**: Unsorted elements
+- 🟡 **Yellow**: Elements being compared
+- 🔴 **Red**: Elements being swapped/moved
+- 🟣 **Purple**: Pivot or selected minimum element
+- 🟢 **Green**: Sorted elements in final position
 
-</div>
+#### Searching
+- 🟣 **Purple**: Not yet checked
+- 🟡 **Yellow (Pulsing)**: Currently checking
+- 🔴 **Red**: Already checked (not a match)
+- 🟢 **Green (Glowing)**: Target element found!
 
 ## 📦 Installation
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- Basic knowledge of Git (optional)
-- A text editor (optional, for customization)
+- **Node.js** (v16.0 or higher) - [Download](https://nodejs.org/)
+- **MongoDB** (v6.0 or higher) - [Download](https://www.mongodb.com/try/download/community) or use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- **npm** or **yarn** - Comes with Node.js
+- **Git** - [Download](https://git-scm.com/)
 
-### Steps
+### Quick Start
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Rajibul-Molla/algorithm-visualizer.git
+   cd algorithm-visualizer
+   ```
 
-## 📸 Screenshots
+2. **Install Backend Dependencies**
+   ```bash
+   cd server
+   npm install
+   ```
 
-<div align="center">
-  
-### 🏠 Homepage
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/home-darkmode.png" alt="Homepage Dark Mode" width="100%">
-      <br>
-      <em>Dark Mode</em>
-    </td>
-    <td align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/home-lightmode.png" alt="Homepage Light Mode" width="100%">
-      <br>
-      <em>Light Mode</em>
-    </td>
-  </tr>
-</table>
+3. **Install Frontend Dependencies**
+   ```bash
+   cd ../client
+   npm install
+   ```
 
-<br>
+4. **Configure Environment Variables**
 
-### 🔄 Sorting Visualizer
-<table>
-  <tr>
-    <td colspan="2" align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/shorting-visulizer.png" alt="Sorting Visualizer Main View" width="90%">
-      <br>
-      <em>Sorting Visualizer Interface</em>
-    </td>
-  </tr>
+   **Backend `.env` (server/.env):**
+   ```env
+   PORT=5000
+   NODE_ENV=development
+   MONGODB_URI=mongodb://localhost:27017/algorithm-visualizer
+   JWT_SECRET=your_super_secret_jwt_key_here
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   CLIENT_URL=http://localhost:3000
+   ```
 
-  <tr>
-    <td colspan="2" align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/shorting-actioncode.png" alt="Algorithm Code Display" width="90%">
-      <br>
-      <em>Algorithm Implementation & Complexity Analysis</em>
-    </td>
-  </tr>
-</table>
+   **Generate JWT Secret:**
+   ```bash
+   node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+   ```
 
-<br>
+   **Frontend `.env` (client/.env):**
+   ```env
+   REACT_APP_API_URL=http://localhost:5000/api
+   REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
+   ```
 
-### 🔍 Searching Visualizer
-<table>
-  <tr>
-    <td colspan="2" align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/searching-visualizer.png" alt="Searching Visualizer Main View" width="90%">
-      <br>
-      <em>Searching Visualizer Interface</em>
-    </td>
-  </tr>
-  
-</table>
+5. **Start MongoDB**
+   ```bash
+   # macOS
+   brew services start mongodb-community
+   
+   # Windows
+   net start MongoDB
+   
+   # Linux
+   sudo systemctl start mongod
+   
+   # Docker
+   docker run -d -p 27017:27017 --name mongodb mongo:latest
+   ```
 
-<br>
+6. **Run the Application**
 
-### 👥 About Us Page
-<div align="center">
-  <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/about-us.png" alt="About Us Page" width="80%">
-  <br>
-  <em>Team Members Page</em>
-</div>
+   **Terminal 1 (Backend):**
+   ```bash
+   cd server
+   npm run dev
+   ```
 
-<br>
+   **Terminal 2 (Frontend):**
+   ```bash
+   cd client
+   npm start
+   ```
 
-### 📱 Mobile Responsive Design
-<table>
-  <tr>
-    <td align="center" width="25%">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/mobile-home.png" alt="Mobile Homepage" width="100%">
-      <br>
-      <em>Homepage</em>
-    </td>
-    <td align="center" width="25%">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/mobile-menue.png" alt="Mobile Menu" width="100%">
-      <br>
-      <em>Navigation Menu</em>
-    </td>
-    <td align="center" width="25%">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/mobile-shorting.png" alt="Mobile Sorting" width="100%">
-      <br>
-      <em>Sorting View</em>
-    </td>
-    <td align="center" width="25%">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/asset/mobile-searching.png" alt="Mobile Searching" width="100%">
-      <br>
-      <em>Searching View</em>
-    </td>
-  </tr>
-</table>
+7. **Access the Application**
+   ```
+   Frontend: http://localhost:3000
+   Backend API: http://localhost:5000/api
+   Health Check: http://localhost:5000/api/health
+   ```
 
-<br>
+## 🔌 API Documentation
 
-### 🖥️ Different Screen Sizes
-<details>
-<summary><b>Click to see responsive design on various devices</b></summary>
-<br>
-<table>
-  <tr>
-    <td align="center">
-      <b>Desktop (1920x1080)</b><br>
-      <img src="screenshots/desktop-view.png" alt="Desktop View" width="100%">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <b>Laptop (1366x768)</b><br>
-      <img src="screenshots/laptop-view.png" alt="Laptop View" width="100%">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <b>Tablet (768x1024)</b><br>
-      <img src="screenshots/tablet-view.png" alt="Tablet View" width="100%">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <b>Mobile (375x812)</b><br>
-      <img src="screenshots/mobile-full.png" alt="Mobile View" width="50%">
-    </td>
-  </tr>
-</table>
-</details>
+### Base URL
+```
+Production: https://algorithm-visualizer-api.onrender.com/api
+Development: http://localhost:5000/api
+```
 
-<br>
 
-### ⚡ Features Showcase
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <img src="screenshots/array-generation.gif" alt="Array Generation" width="100%">
-      <br>
-      <em>Random Array Generation</em>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/speed-control.gif" alt="Speed Control" width="100%">
-      <br>
-      <em>Speed Control Feature</em>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/size-adjustment.gif" alt="Size Adjustment" width="100%">
-      <br>
-      <em>Array Size Adjustment</em>
-    </td>
-  </tr>
-</table>
 
-</div>
+#### Get Current User
+```http
+GET /api/auth/me
+Authorization: Bearer <your_jwt_token>
+```
+
+#### Google OAuth
+```http
+POST /api/auth/google
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@gmail.com",
+  "googleId": "1234567890",
+  "avatar": "https://..."
+}
+```
+
+### User Endpoints
+
+#### Get Profile
+```http
+GET /api/users/profile
+Authorization: Bearer <your_jwt_token>
+```
+
+#### Update Profile
+```http
+PUT /api/users/profile
+Authorization: Bearer <your_jwt_token>
+Content-Type: application/json
+
+{
+  "name": "John Updated"
+}
+```
+
+### Health Check
+```http
+GET /api/health
+
+Response:
+{
+  "status": "OK",
+  "message": "Server is running",
+  "database": "Connected"
+}
+```
+
+## 📁 Project Structure
+
+```
+algorithm-visualizer/
+├── client/                          # React Frontend
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   └── AuthPage.jsx       # Login/Signup Component
+│   │   │   ├── About/
+│   │   │   │   └── AboutSection.jsx   # Team Section
+│   │   │   ├── Visualizers/
+│   │   │   │   ├── SortingVisualizer.jsx    # 5 Sorting Algorithms
+│   │   │   │   └── SearchingVisualizer.jsx  # 2 Search Algorithms
+│   │   │   ├── Layout/
+│   │   │   │   └── Header.jsx         # Navigation Header
+│   │   │   └── Home/
+│   │   │       └── HomePage.jsx       # 3D Animated Homepage
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx        # Auth State Management
+│   │   ├── utils/
+│   │   │   └── api.js                 # Axios API Client
+│   │   ├── App.jsx                    # Main App Component
+│   │   ├── index.js                   # React Entry Point
+│   │   └── index.css                  # Tailwind CSS
+│   ├── .env                           # Frontend Config
+│   ├── package.json
+│   └── tailwind.config.js
+│
+├── server/                          # Express Backend
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── database.js            # MongoDB Connection
+│   │   ├── controllers/
+│   │   │   └── authController.js      # Auth Logic
+│   │   ├── models/
+│   │   │   └── User.js                # User Schema
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js          # Auth Routes
+│   │   │   └── userRoutes.js          # User Routes
+│   │   └── middleware/
+│   │       └── auth.js                # JWT Verification
+│   ├── .env                           # Backend Config
+│   ├── package.json
+│   └── server.js                      # Express Server
+│
+├── .gitignore
+├── docker-compose.yml               # Docker Setup
+├── LICENSE
+└── README.md
+```
 
 ## 👥 Team
 
 <table align="center">
   <tr>
     <td align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/unnamed.jpg" width="100px;" alt="Rajibul Molla"/><br />
-      <sub><b>Rajibul Molla</b></sub><br />
-      <a href="https://github.com/rajibul" title="Code">💻</a>
-      <a href="https://linkedin.com/in/rajibul" title="LinkedIn">💼</a>
+      <a href="https://www.linkedin.com/in/rajibulmolla/">
+        <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/unnamed.jpg" width="120px;" alt="Rajibul Molla"/><br />
+        <sub><b>Rajibul Molla</b></sub>
+      </a>
+      <br />
+      <sub>Full Stack Developer</sub>
+      <br />
+      <a href="https://github.com/Rajibul-Molla" title="GitHub">💻</a>
+      <a href="https://www.linkedin.com/in/rajibulmolla/" title="LinkedIn">💼</a>
+      <a href="mailto:rajibulat@gmail.com" title="Email">📧</a>
     </td>
     <td align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/adi.jpg" width="100px;" alt="Aditya Kumar"/><br />
-      <sub><b>Aditya Kumar</b></sub><br />
-      <a href="https://github.com/aditya" title="Code">💻</a>
-      <a href="https://linkedin.com/in/aditya-kumar-8a7094296" title="LinkedIn">💼</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar-8a7094296/">
+        <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/adi.jpg" width="120px;" alt="Aditya Kumar"/><br />
+        <sub><b>Aditya Kumar</b></sub>
+      </a>
+      <br />
+      <sub>Full Stack Developer</sub>
+      <br />
+      <a href="#" title="GitHub">💻</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar-8a7094296/" title="LinkedIn">💼</a>
+      <a href="mailto:kadityah378@gmail.com" title="Email">📧</a>
     </td>
     <td align="center">
-      <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/somya.jpg" width="100px;" alt="Somya Rani"/><br />
-      <sub><b>Somya Rani</b></sub><br />
-      <a href="https://github.com/somya" title="Code">💻</a>
-      <a href="https://linkedin.com/in/somya-rani" title="LinkedIn">💼</a>
+      <a href="https://www.linkedin.com/in/somya-rani/">
+        <img src="https://github.com/Rajibul-Molla/Algorithm-Visualizer/blob/master/About%20Us/somya.jpg" width="120px;" alt="Somya Rani"/><br />
+        <sub><b>Somya Rani</b></sub>
+      </a>
+      <br />
+      <sub>Full Stack Developer</sub>
+      <br />
+      <a href="#" title="GitHub">💻</a>
+      <a href="https://www.linkedin.com/in/somya-rani/" title="LinkedIn">💼</a>
+      <a href="mailto:somyarani698@gmail.com" title="Email">📧</a>
     </td>
   </tr>
 </table>
 
-
 ## 🎯 Future Enhancements
 
 <details>
-<summary><b>Planned Features</b></summary>
+<summary><b>Planned Features (Click to expand)</b></summary>
 
-- [ ] **Graph Algorithms**
-  - Dijkstra's Algorithm
-  - BFS/DFS Visualization
-  - Kruskal's & Prim's Algorithm
-
-- [ ] **Advanced Sorting**
+- [ ] **More Algorithms**
   - Heap Sort
   - Radix Sort
   - Counting Sort
-  - Bucket Sort
+  - Shell Sort
+
+- [ ] **Graph Algorithms**
+  - Dijkstra's Algorithm Visualization
+  - BFS/DFS Traversal
+  - Kruskal's & Prim's MST
+  - A* Pathfinding
 
 - [ ] **Data Structures**
-  - Stack Operations
-  - Queue Operations
-  - Tree Traversals
+  - Binary Search Tree Visualization
+  - AVL Tree Rotations
+  - Stack & Queue Operations
   - Linked List Operations
+  - Hash Table Collisions
 
 - [ ] **Enhanced Features**
-  - Algorithm Comparison Mode
-  - Custom Input Arrays
+  - Algorithm Comparison Mode (side-by-side)
+  - Custom Array Input
+  - Export Visualizations as GIF/Video
   - Step-by-step Explanation Mode
   - Algorithm Race Mode
-  - Sound Effects
-  - Export Visualizations as GIF
-  - Multi-language Support
+  - Sound Effects for Operations
+  - Multi-language Code Display (Python, Java, C++)
+  - User Progress Tracking & Badges
+  - Social Sharing Features
+
+- [ ] **Mobile App**
+  - React Native mobile application
+  - Offline mode support
+  - Touch gesture controls
 
 </details>
+
+## 🤝 Contributing
+
+We love contributions! Here's how you can help make this project even better:
+
+### 1. Fork & Clone
+```bash
+git clone https://github.com/Rajibul-Molla/algorithm-visualizer.git
+cd algorithm-visualizer
+```
+
+### 2. Create Feature Branch
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+### 3. Make Your Changes
+- Write clean, commented code
+- Follow existing code style
+- Test thoroughly on multiple devices
+- Update documentation if needed
+
+### 4. Commit Changes
+```bash
+git commit -m 'Add some AmazingFeature'
+```
+
+### 5. Push & Create PR
+```bash
+git push origin feature/AmazingFeature
+```
+
+Then open a Pull Request with a clear description of your changes.
+
+### Code Style Guidelines
+- Use Prettier for formatting
+- Follow React best practices
+- Write meaningful commit messages
+- Add comments for complex logic
+- Test on Chrome, Firefox, Safari
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+
+MIT License
+
+Copyright (c) 2024 Rajibul Molla, Aditya Kumar, Somya Rani
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction...
+```
 
 ## 🙏 Acknowledgments
 
 <div align="center">
-  
-Special thanks to all contributors and the open-source community for their invaluable resources and inspiration.
 
-- **Prism.js** - For syntax highlighting
-- **Ionicons** - For beautiful icons
-- **Google Fonts** - For typography
-- **MDN Web Docs** - For web development references
-- **Stack Overflow Community** - For problem-solving support
+Special thanks to the open-source community and these amazing tools:
+
+**Libraries & Frameworks:**
+- [React.js](https://reactjs.org/) - UI Framework
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Express.js](https://expressjs.com/) - Backend Framework
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Prism.js](https://prismjs.com/) - Syntax Highlighting
+- [Lucide React](https://lucide.dev/) - Beautiful Icons
+
+**Resources:**
+- [MDN Web Docs](https://developer.mozilla.org/) - Web Documentation
+- [Stack Overflow](https://stackoverflow.com/) - Problem Solving
+- [GitHub](https://github.com/) - Version Control
+- [Vercel](https://vercel.com/) - Frontend Hosting
+- [Render](https://render.com/) - Backend Hosting
 
 </div>
 
@@ -410,25 +603,10 @@ Special thanks to all contributors and the open-source community for their inval
 
 <div align="center">
 
-For any queries or suggestions, please reach out to us:
+For queries, suggestions, or collaboration:
 
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajibulat@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajibul-molla)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rajibul-Molla)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:somyarani698@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/somya-rani/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/somyarani2003)
 
-</div>
-
----
-
-<div align="center">
-  
-### ⭐ Star this repository if you found it helpful!
-
-<img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love">
-<img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="Made with JavaScript">
-<img src="https://forthebadge.com/images/badges/open-source.svg" alt="Open Source">
-
-**Happy Learning! 🚀**
-
-</div>
-
+**Project
