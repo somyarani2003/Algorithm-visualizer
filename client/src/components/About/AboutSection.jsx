@@ -1,5 +1,5 @@
 import React from "react";
-import { X, Linkedin, Mail, Github } from "lucide-react";
+import {Linkedin, Mail, Github } from "lucide-react";
 
 const AboutSection = ({ onClose }) => {
   const team = [

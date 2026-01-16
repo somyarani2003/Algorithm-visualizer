@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 const SearchingVisualizer = () => {
   const [array, setArray] = useState([]);
@@ -19,9 +19,7 @@ const SearchingVisualizer = () => {
       space: 'O(1)',
       code: `function linearSearch(arr, target) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
+    if (arr[i] === target) return i;
   }
   return -1;
 }`
@@ -43,18 +41,12 @@ const SearchingVisualizer = () => {
     }
   };
 
-  useEffect(() => {
-    generateArray();
-  }, [arraySize]);
-
-  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-  const generateArray = () => {
+  // ✅ useCallback to fix ESLint
+  const generateArray = useCallback(() => {
     let newArray = Array.from({ length: arraySize }, () =>
       Math.floor(Math.random() * 500) + 10
     );
 
-    // If binary search, sort the array
     if (algorithm === 'binary') newArray.sort((a, b) => a - b);
 
     setArray(newArray);
@@ -63,7 +55,13 @@ const SearchingVisualizer = () => {
     setCurrentIndex(-1);
     setComparedIndices([]);
     setSearchValue('');
-  };
+  }, [arraySize, algorithm]);
+
+  useEffect(() => {
+    generateArray();
+  }, [generateArray]);
+
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
   const linearSearch = async (target) => {
     let stepCount = 0;
@@ -106,11 +104,8 @@ const SearchingVisualizer = () => {
         return;
       }
 
-      if (array[mid] < target) {
-        left = mid + 1;
-      } else {
-        right = mid - 1;
-      }
+      if (array[mid] < target) left = mid + 1;
+      else right = mid - 1;
     }
     setFound(-1);
     setCurrentIndex(-1);
@@ -126,11 +121,8 @@ const SearchingVisualizer = () => {
     setCurrentIndex(-1);
     setComparedIndices([]);
 
-    if (algorithm === 'linear') {
-      await linearSearch(target);
-    } else {
-      await binarySearch(target);
-    }
+    if (algorithm === 'linear') await linearSearch(target);
+    else await binarySearch(target);
 
     setSearching(false);
   };
@@ -139,7 +131,6 @@ const SearchingVisualizer = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="bg-gray-800 rounded-2xl p-4 sm:p-8 shadow-2xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-purple-500 mb-6">Searching Visualizer</h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <select
             value={algorithm}
@@ -210,25 +201,6 @@ const SearchingVisualizer = () => {
               </div>
             ))}
           </div>
-
-          {searching && (
-            <div className="mt-6 text-center">
-              <div className="inline-flex items-center gap-4 bg-gray-800 px-6 py-3 rounded-lg">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-yellow-400 rounded"></div>
-                  <span className="text-white text-sm">Currently Checking</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-red-500 rounded"></div>
-                  <span className="text-white text-sm">Already Checked</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-green-500 rounded"></div>
-                  <span className="text-white text-sm">Found!</span>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {found !== null && (
