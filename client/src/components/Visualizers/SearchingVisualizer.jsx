@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 const SearchingVisualizer = () => {
   const [array, setArray] = useState([]);
   const [arraySize, setArraySize] = useState(20);
@@ -46,29 +47,35 @@ const SearchingVisualizer = () => {
     generateArray();
   }, [arraySize]);
 
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
   const generateArray = () => {
-    const newArray = Array.from({ length: arraySize }, (_, i) => (i + 1) * 10);
+    let newArray = Array.from({ length: arraySize }, () =>
+      Math.floor(Math.random() * 500) + 10
+    );
+
+    // If binary search, sort the array
+    if (algorithm === 'binary') newArray.sort((a, b) => a - b);
+
     setArray(newArray);
     setFound(null);
     setSteps(0);
     setCurrentIndex(-1);
     setComparedIndices([]);
+    setSearchValue('');
   };
-
-  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
   const linearSearch = async (target) => {
     let stepCount = 0;
     setComparedIndices([]);
-    
+
     for (let i = 0; i < array.length; i++) {
       stepCount++;
       setSteps(stepCount);
       setCurrentIndex(i);
       setComparedIndices(prev => [...prev, i]);
-      
       await sleep(500);
-      
+
       if (array[i] === target) {
         setFound(i);
         setCurrentIndex(-1);
@@ -83,22 +90,22 @@ const SearchingVisualizer = () => {
     let left = 0, right = array.length - 1;
     let stepCount = 0;
     setComparedIndices([]);
-    
+
     while (left <= right) {
       stepCount++;
       setSteps(stepCount);
       const mid = Math.floor((left + right) / 2);
-      
+
       setCurrentIndex(mid);
       setComparedIndices(prev => [...prev, mid]);
       await sleep(800);
-      
+
       if (array[mid] === target) {
         setFound(mid);
         setCurrentIndex(-1);
         return;
       }
-      
+
       if (array[mid] < target) {
         left = mid + 1;
       } else {
@@ -112,19 +119,19 @@ const SearchingVisualizer = () => {
   const startSearch = async () => {
     const target = parseInt(searchValue);
     if (isNaN(target)) return;
-    
+
     setSearching(true);
     setFound(null);
     setSteps(0);
     setCurrentIndex(-1);
     setComparedIndices([]);
-    
+
     if (algorithm === 'linear') {
       await linearSearch(target);
     } else {
       await binarySearch(target);
     }
-    
+
     setSearching(false);
   };
 
@@ -132,7 +139,7 @@ const SearchingVisualizer = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="bg-gray-800 rounded-2xl p-4 sm:p-8 shadow-2xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-purple-500 mb-6">Searching Visualizer</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <select
             value={algorithm}
@@ -203,7 +210,7 @@ const SearchingVisualizer = () => {
               </div>
             ))}
           </div>
-          
+
           {searching && (
             <div className="mt-6 text-center">
               <div className="inline-flex items-center gap-4 bg-gray-800 px-6 py-3 rounded-lg">
